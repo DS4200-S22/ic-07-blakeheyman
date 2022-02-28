@@ -108,9 +108,9 @@ const mouseover1 = function(event, d) {
 // Define the mousemove event handler.
 const mousemove1 = function(event, d) {
   // Offset it from the left when mouse is moved.
-  tooltip1.style("left", (event.x)+"px") 
+  tooltip1.style("left", (event.pageX)+"px") 
           // Offset it from the top when mouse is moved.
-          .style("top", (event.y + yTooltipOffset) +"px"); 
+          .style("top", (event.pageY + yTooltipOffset) +"px"); 
 }
 
 // Hide the tooltip when the mouse leaves the bar.
@@ -190,7 +190,7 @@ d3.csv("data/barchart.csv").then((data) => {
 
   /* 
 
-    Bars 
+    Scatter
 
   */
 
@@ -207,7 +207,3 @@ d3.csv("data/barchart.csv").then((data) => {
       .on("mousemove", mousemove1)
       .on("mouseleave", mouseleave1);
 });
-
-
-
-
